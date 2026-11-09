@@ -3,7 +3,7 @@
 **Facultad de Ciencias, UNAM**
 
 ## Descripción del proyecto
-.
+Esta practica esta diseñada para enseñarnos mejor como funciona la POO, entonces mediante clases debemos construir un cotizador de envio de paquetes, para lograr estos se usaron dos clases (Paqueteria y CotizadorEnvio) y un programa de prueba (PruebaPaqueteria).
 
 ---
 
