@@ -11,19 +11,19 @@ Esta practica esta diseñada para enseñarnos mejor como funciona la POO, entonc
 
 ### 1. Compilación
 ```bash
-javac -d bin/ src/*.java
+~/Practica07 javac -d bin/ src/*.java
 
 ```
 
 ### 2. Ejecución
 ```bash
-java -cp bin/ PruebaPaqueteria 
+~/Practica07 java -cp bin/ PruebaPaqueteria 
 
 ```
 
 ### 3. Generación de documentación Javadoc
 ```bash
-(Aun no no enseñan esto :( )
+~/Practica07 javadoc -d docs -private -encoding UTF-8 src/*.java
 
 ```
 

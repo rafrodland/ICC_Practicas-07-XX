@@ -5,8 +5,7 @@
  * Al no modelar un objeto con estado interno persistente, sus metodos se declaran
  * como estaticos (static) y operan sobre los objetos {@link Paquete} recibidos por parametro.
  * 
- * @author Tu Nombre
- * @version 1.0
+ * @author Rafael Landeros
  */
 public class CotizadorEnvio {
 
@@ -18,7 +17,6 @@ public class CotizadorEnvio {
      *         para considerarse valido; false en caso contrario.
      */
     public static boolean esPaqueteValido(Paquete p) {
-        // POR HACER: Implementa la validacion de referencia y propiedades del paquete
 
         if( p == null || (p.getPesoKg() <= 0 || p.getLargo() <= 0 || p.getAncho() <= 0 || p.getAlto() <= 0)){
 
@@ -52,7 +50,6 @@ public class CotizadorEnvio {
 
             double pesoObtenido = p.obtenerPesoCobrable(); 
             double tarifaFinal = 0;
-            //int extra = 0;
             double extra;
 
             if(pesoObtenido <= 5){
@@ -63,25 +60,11 @@ public class CotizadorEnvio {
 
                 extra = pesoObtenido - 5;
 
-                /*while(pesoObtenido >= 10){
-
-                    pesoObtenido -= 1;
-                    extra ++;
-
-                }*/
-
                 tarifaFinal = 120 + ((extra) * 18);
 
             }else{
 
                 extra = pesoObtenido - 15;
-
-                /*while(pesoObtenido >= 20){
-
-                    pesoObtenido -= 1;
-                    extra ++;
-
-                }*/
 
                 tarifaFinal = 300 + ((extra) * 25);
             }
@@ -128,10 +111,19 @@ public class CotizadorEnvio {
         }
     }
 
+
+    /** 
+     * Aplica un descuento al precio del envio
+     * dependiendo si es un envio local
+     * si es local el descuento sera del 20%
+     * si no es local el descuento sera del 0%
+     * 
+     * @param p El valor del descuento.
+     * @return El precio del envio con el descuento aplicado.
+     */
     public static double aplicarDescuento(Paquete p){
 
-        double precioConDescuento = (cotizarEnvio(p)) * (p.validarDescuento());
+        return (cotizarEnvio(p)) * (p.determinarDescuento());
 
-        return precioConDescuento;
     }
 }
